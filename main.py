@@ -6,6 +6,7 @@ import sqlite3
 window = tk.Tk()
 window.title("Note Taking App")
 window.geometry("600x450")
+window.configure(bg="#f0f0f0")  # Set background color
 
 # Create a text box
 note_entry = tk.Text(window)
@@ -30,7 +31,7 @@ def save_note():
     except sqlite3.Error as e:
         messagebox.showerror("Database Error", f"Error occurred while saving note: {e}")
 
-save_button = tk.Button(window, text="Save Note", command=save_note)
+save_button = tk.Button(window, text="Save Note", command=save_note, bg="#4caf50", fg="white")  # Set background and foreground colors
 save_button.pack()
 
 # Adding a button to view saved notes
@@ -51,7 +52,7 @@ def view_notes():
     except sqlite3.Error as e:
         messagebox.showerror("Database Error", f"Error occurred while fetching notes: {e}")
 
-view_button = tk.Button(window, text="View Notes", command=view_notes)
+view_button = tk.Button(window, text="View Notes", command=view_notes, bg="#2196f3", fg="white")  # Set background and foreground colors
 view_button.pack()
 
 # Adding a button to delete all saved notes
@@ -66,7 +67,7 @@ def delete_notes():
     except sqlite3.Error as e:
         messagebox.showerror("Database Error", f"Error occurred while deleting notes: {e}")
 
-delete_button = tk.Button(window, text="Delete All Notes", command=delete_notes)
+delete_button = tk.Button(window, text="Delete All Notes", command=delete_notes, bg="#f44336", fg="white")  # Set background and foreground colors
 delete_button.pack()
 
 # Run the application
