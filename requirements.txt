@@ -1,3 +1,2 @@
-tk
-sqlite3
-Pillow
+tk==0.1.0
+pillow==10.2.0
